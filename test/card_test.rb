@@ -22,24 +22,4 @@ class CardTest < Minitest::Test
     assert_equal 'Queen', card.rank
     assert_equal 12, card.value
   end
-
-  def test_card_returns_rank
-    skip
-  end
-
-  def test_is_card_high_ranking
-    skip
-  end
-
-  def test_what_percentage_high_ranking
-    skip
-  end
-
-  def test_can_remove_card
-    skip
-  end
-
-  def can_add_card
-    skip
-  end
 end
