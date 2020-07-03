@@ -1,28 +1,17 @@
-# require './lib/card'
-
-class Card
-  attr_reader :suit, :rank, :value
-
-  def initialize(suit = :suit, rank = 'Rank', value = 0)
-    @suit = suit
-    @rank = rank
-    @value = value
-  end
-end
+require './lib/card'
 
 class Deck
-  attr_reader :deck, :card #gives access to the instance variables outside of the class
+  attr_reader :cards #gives access to the instance variables outside of the class
 
-  def initialize(deck, card) #argument
-    @deck = deck #instance variable, then argument
-    @card = card
+  def initialize(cards) #argument
+    @cards = cards
   end
 
   def add_card
 
   end
 
-  # def rank_of_cards_at
+  # def rank_of_card_at
 
   # end
 

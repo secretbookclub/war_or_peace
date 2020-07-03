@@ -3,30 +3,24 @@ require 'minitest/pride'
 require './lib/deck'
 
 class DeckTest < Minitest::Test
-  # def setup
-  #   # not necessarily necessary
-  #   @card1 = Card.new(:diamonds, 'Queen', 12)
-  #   @card2 = Card.new(:spades, 'King', 13)
-  #   @card3 = Card.new(:hearts, 'Ace', 14)
-  #   @card4 = Card.new(:clubs, 'Number', 9)
-  #   @cards = [@card1, @card2, @card3, @card4]
-  #   @deck = Deck.new(@cards) # instance variable so test_it_exists knows about instance variable
-  # end
 
   def test_it_exists
     # skip
-    @deck = Deck.new(@card1, @card2)
+    @deck = Deck.new(@card1, @card2) # 2 cards - argument for @deck variable
+    #
     @card1 = Card.new(:diamonds, 'Queen', 12)
     @card2 = Card.new(:spades, 'King', 13)
+    @cards = [@card1, @card2]
     assert_instance_of Deck, @deck
   end
 
   def test_it_has_cards
     # skip
-    @deck = Deck.new(@card1, @card2)
-    @card1 = Card.new(:diamonds, 'Queen', 12)
-    @card2 = Card.new(:spades, 'King', 13)
-    assert_equal @deck.cards, @cards
+    # @deck = Deck.new(@card1, @card2)
+    # @card1 = Card.new(:diamonds, 'Queen', 12)
+    # @card2 = Card.new(:spades, 'King', 13)
+    # @cards = [@card1, @card2]
+    assert_equal
   end
 
   def test_can_add_a_card
