@@ -41,17 +41,23 @@ class DeckTest < Minitest::Test
 
   def test_can_determine_card_high_ranking
     # skip
-    card_1 = Card.new(:diamond, 'Queen', 12) # symbol - practicing w/ diff data types
+    card_1 = Card.new(:diamond, 'Queen', 12)
     card_2 = Card.new(:spade, '3', 3)
     card_3 = Card.new(:heart, 'Ace', 14)
 
     deck = Deck.new([card_1, card_2, card_3])
-
-    assert_equal deck, @cards.high_ranking_cards
-  end
+# require "pry"; binding.pry
+    assert_equal [card_1, card_3], deck.high_ranking_cards
+    end
 
   def test_can_return_percent_high_ranking #utilize earlier method?
-    skip
+    # skip
+    card_1 = Card.new(:diamond, 'Queen', 12)
+    card_2 = Card.new(:spade, '3', 3)
+    card_3 = Card.new(:heart, 'Ace', 14)
+
+    deck = Deck.new([card_1, card_2, card_3])
+    assert_equal 2/3r, deck.percent_high_ranking 
   end
 
   def test_can_add_a_card
