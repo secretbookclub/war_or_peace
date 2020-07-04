@@ -11,9 +11,15 @@ class Deck
     @cards[index].rank
   end
 
-  # def high_ranking_cards
-
-  # end
+  def high_ranking_cards
+    high_rank_cards = []
+    @cards.each do |card|
+      if card.rank >= 11
+        high_rank_cards << card
+      end
+      return high_rank_cards
+    end
+  end
 
   # def percent_high_ranking
 
