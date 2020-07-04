@@ -57,23 +57,30 @@ class DeckTest < Minitest::Test
     card_3 = Card.new(:heart, 'Ace', 14)
 
     deck = Deck.new([card_1, card_2, card_3])
-    assert_equal 2/3r, deck.percent_high_ranking 
+    assert_equal 66.67, deck.percent_high_ranking
   end
 
   def test_can_add_a_card
-      skip
+      # skip
     card_1 = Card.new(:diamond, 'Queen', 12)
-    card_2 = Card.new(:spade, 'Ace', 14)
-    card_3 = Card.new(:club, '7', 7)
+    card_2 = Card.new(:spade, '3', 3)
+    card_3 = Card.new(:heart, 'Ace', 14)
 
     deck = Deck.new([card_1, card_2, card_3])
-    card_4 = Card.new(:heart, 'King', 13)
-    deck.add_card(card_4)
+    card_4 = Card.new(:club, '5', 5)
+    # deck.add_card(card_4) #don't call method in test code, call in actual
 
-    assert_equal deck, [card_1, card_2, card_3, card_4]
+    assert_equal [card_1, card_2, card_3, card_4], deck.add_card(card_4)
   end
 
     def test_can_remove_card
-      skip
+      # skip
+      card_1 = Card.new(:diamond, 'Queen', 12)
+      card_2 = Card.new(:spade, '3', 3)
+      card_3 = Card.new(:heart, 'Ace', 14)
+
+      deck = Deck.new([card_1, card_2, card_3])
+
+      assert_equal [card_2, card_3], deck.remove_card
     end
 end

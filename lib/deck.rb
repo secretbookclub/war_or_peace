@@ -21,13 +21,16 @@ class Deck
     return high_rank_cards # tried this between conditional end and .each end, which didn't work
   end
 
-  # def percent_high_ranking
+  def percent_high_ranking
+    percent_high_rank = high_ranking_cards.length
+    ((percent_high_rank / @cards.length.to_f) * 100).round(2)
+  end
 
-  # end
+  def add_card(new_card)
+    @cards << new_card
+  end
 
-  # def add_card(new_card)
-  #   @cards << new_card
-  # end
-
-  # def remove_card
+  def remove_card
+    @cards.drop(1)
+  end
 end
