@@ -7,15 +7,9 @@ class Deck
     @cards = cards
   end
 
-  def add_card(new_card)
-    @cards << new_card
+  def rank_of_card_at(index)
+    @cards[index].rank
   end
-
-  # def remove_card
-
-  # def rank_of_card_at
-
-  # end
 
   # def high_ranking_cards
 
@@ -24,4 +18,10 @@ class Deck
   # def percent_high_ranking
 
   # end
+
+  # def add_card(new_card)
+  #   @cards << new_card
+  # end
+
+  # def remove_card
 end
