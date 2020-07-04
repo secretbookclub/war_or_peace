@@ -1,34 +1,42 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/deck'
+require './lib/card'
+
+    # require "pry"; binding.pry
 
 class DeckTest < Minitest::Test
 
   def test_it_exists
     # skip
-    @deck = Deck.new(@card1, @card2) # 2 cards - argument for @deck variable
-    #
-    @card1 = Card.new(:diamonds, 'Queen', 12)
-    @card2 = Card.new(:spades, 'King', 13)
-    @cards = [@card1, @card2]
-    assert_instance_of Deck, @deck
+    card_1 = Card.new(:diamond, 'Queen', 12)
+    card_2 = Card.new(:diamond, 'Ace', 14)
+    card_3 = Card.new(:club, '7', 7)
+    deck = Deck.new([card_1, card_2, card_3])
+    assert_instance_of Deck, deck
   end
 
   def test_it_has_cards
-    # skip
-    # @deck = Deck.new(@card1, @card2)
-    # @card1 = Card.new(:diamonds, 'Queen', 12)
-    # @card2 = Card.new(:spades, 'King', 13)
-    # @cards = [@card1, @card2]
+    skip
+    card_1 = Card.new(:diamond, 'Queen', 12)
+    card_2 = Card.new(:spade, 'Ace', 14)
+    card_3 = Card.new(:club, '7', 7)
+
+    deck = Deck.new([card_1, card_2, card_3])
     assert_equal
   end
 
   def test_can_add_a_card
-    skip
-    @card5 = Card.new(:spades, 'Jack', 11)
-    @cards2 = [@card1, @card2, @card3, @card4, @card5]
-    @deck.add_card()
-    assert_equal @deck.cards, @cards2
+    # skip
+    card_1 = Card.new(:diamond, 'Queen', 12)
+    card_2 = Card.new(:spade, 'Ace', 14)
+    card_3 = Card.new(:club, '7', 7)
+
+    deck = Deck.new([card_1, card_2, card_3])
+    card_4 = Card.new(:heart, 'King', 13)
+    deck.add_card(card_4)
+
+    assert_equal deck, [card_1, card_2, card_3, card_4]
   end
 
   def test_can_remove_card

@@ -1,9 +1,11 @@
 class Card
-  attr_reader :suit, :rank, :value
+  attr_reader :suit, :value, :rank
 
-  def initialize(suit = :suit, rank = 'Rank', value = 0)
+  def initialize(suit, value, rank)
     @suit = suit
-    @rank = rank
     @value = value
+    @rank = rank
   end
 end
+
+# an instance of the Card class has the attributes suit, rank, and value.
