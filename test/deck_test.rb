@@ -78,6 +78,10 @@ class DeckTest < Minitest::Test
       card_3 = Card.new(:heart, 'Ace', 14)
 
       deck = Deck.new([card_1, card_2, card_3])
-      assert_equal [card_2, card_3], deck.remove_card
+      # binding.pry
+      assert_equal [card_2,card_3], deck.remove_card # The line below worked earlier but
+      # now doesn't I'm not sure what changed
+      # And not sure if we should be returning the changed array or the removed card
+      # assert_equal [card_2, card_3], deck.remove_card
     end
 end
