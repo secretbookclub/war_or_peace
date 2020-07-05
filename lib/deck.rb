@@ -32,6 +32,6 @@ class Deck
   end
 
   def remove_card
-    @cards.drop(1)
+    @cards.shift
   end
 end
