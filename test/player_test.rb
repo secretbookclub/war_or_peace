@@ -13,6 +13,7 @@ class PlayerTest < Minitest::Test
     card_3 = Card.new(:heart, 'Ace', 14)
     deck_1 = Deck.new([card_1, card_2, card_3])
     player_1 = Player.new('Nero', deck_1)
+
     assert_instance_of Player, player_1
   end
 
@@ -24,18 +25,21 @@ class PlayerTest < Minitest::Test
     deck_1 = Deck.new([card_1, card_2, card_3])
     player_1 = Player.new('Nero', deck_1)
 
-    
-
     assert_equal false, player_1.has_lost?
   end
 
   def test_determine_player_has_lost_part_2
-    skip
+    # skip
     card_1 = Card.new(:diamond, 'Queen', 12)
     card_2 = Card.new(:spade, '3', 3)
     card_3 = Card.new(:heart, 'Ace', 14)
     deck = Deck.new([card_1, card_2, card_3])
     player_1 = Player.new('Nero', deck)
+    # binding.pry
+
+    deck.remove_card
+    deck.remove_card
+    deck.remove_card #change deck to deck_1
 
     assert_equal true, player_1.has_lost?
   end
