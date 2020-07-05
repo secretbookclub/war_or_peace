@@ -9,10 +9,7 @@ class Player
     @deck = deck
   end
 
-  def has_lost? # ? tells Ruby we want a Boolean
-    # binding.pry
+  def has_lost? # ? tells Ruby we want a Boolean - so we don't need a conditional
     deck.cards == [] # calling the deck attribute, and calling the cards method
-    # if !@cards.empty?
-    # if deck(@cards) == []
   end
 end
