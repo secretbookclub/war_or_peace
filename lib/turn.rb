@@ -10,14 +10,6 @@ class Turn
     @spoils_of_war = [] # basic and war
   end
 
-  # def type
-  #   # Turn.all.each do |player|
-  #   #   player.remove_card
-  #
-  #     player.rank_of_card_at(0)
-  #   if
-  # end
-
 def type
   if player_1.deck.rank_of_card_at(0) != player_2.deck.rank_of_card_at(0)
     :basic
@@ -34,12 +26,25 @@ end
   # if one is higher, basic, 2 cards add to that player's array
   # if equal,
 
-  # def winner
-  # end
-  #
+  # what previous method do you need to call?
+
+  def winner
+    if player_1.deck.rank_of_card_at(0) > player_2.deck.rank_of_card_at(0)
+      @player_1
+    elsif player_2.deck.rank_of_card_at(0) > player_1.deck.rank_of_card_at(0)
+      @player_2
+    elsif player_1.deck.rank_of_card_at(2) > player_2.deck.rank_of_card_at(2)
+      @player_1
+    elsif player_2.deck.rank_of_card_at(2) > player_1.deck.rank_of_card_at(2)
+      @player_2
+    elsif player_1.deck.rank_of_card_at(2) == player_2.rank_of_card_at(2) && player_1.deck.rank_of_card_at(0) == player_2.deck.rank_of_card_at(0)
+      p "No winner"
+    end
+  end
+
   # def pile_cards
   # end
-  #
+
   # def award_spoils
   # end
 
