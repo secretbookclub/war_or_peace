@@ -91,12 +91,13 @@ class TurnTest < Minitest::Test
     player_2 = Player.new(deck_2, 'Sandy')
 
     turn = Turn.new(player_1, player_2)
-
-    assert_equal 
+    binding.pry
+    assert_equal [card_1, card_3], turn.pile_cards
   end
 
   def test_can_award_spoils
-    skip
+    # skip
+
   end
 
 end

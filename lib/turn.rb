@@ -42,10 +42,18 @@ end
     end
   end
 
-  # def pile_cards
-  # end
+  def pile_cards
+    if type == :basic
+      @spoils_of_war << player_1.deck.cards[0]
+      @spoils_of_war << player_2.deck.cards[0]
+    elsif type == :war
+      @spoils_of_war << player_1.deck.cards[0, 1, 2]
+      @spoils_of_war << player_2.deck.cards[0, 1, 2]
+    elsif type == :mutually_assured_destruction
+      player_1.deck.cards.drop(3)
+    end
+  end
 
   # def award_spoils
   # end
-
 end
