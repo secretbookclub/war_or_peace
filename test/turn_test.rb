@@ -114,10 +114,9 @@ class TurnTest < Minitest::Test
 
     turn = Turn.new(player_1, player_2)
 
-    winner = turn.winner
-    # turn.award_spoils(winner)
-# binding.pry
-    assert_equal [card_1, card_3], turn.award_spoils(winner)
+    # winner = turn.winner
+
+    assert_equal [card_1, card_3], turn.award_spoils(winner) # actual - player_1.deck?
   end
 
 end
