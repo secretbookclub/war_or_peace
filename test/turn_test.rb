@@ -21,10 +21,10 @@ class TurnTest < Minitest::Test
     deck_1 = Deck.new([card_1, card_2, card_5, card_8])
     deck_2 = Deck.new([card_3, card_4, card_6, card_7])
 
-    player_1 = Player.new('Nero', deck_1)
-    player_2 = Player.new('Sandy', deck_2)
+    player_1 = Player.new(deck_1, 'Nero')
+    player_2 = Player.new(deck_2, 'Sandy')
 
-    turn = Turn.new(player_1, player_2, [card_1, card_2])
+    turn = Turn.new(player_1, player_2)
 
     assert_instance_of Turn, turn
   end
@@ -43,11 +43,24 @@ class TurnTest < Minitest::Test
     deck_1 = Deck.new([card_1, card_2, card_5, card_8])
     deck_2 = Deck.new([card_3, card_4, card_6, card_7])
 
-    player_1 = Player.new('Nero', deck_1)
-    player_2 = Player.new('Sandy', deck_2)
+    player_1 = Player.new(deck_1, 'Nero')
+    player_2 = Player.new(deck_2, 'Sandy')
 
-    turn = Turn.new(player_1, player_2, [card_1, card_2])
-
+    turn = Turn.new(player_1, player_2)
+# binding.pry
     assert_equal :basic, turn.type
   end
+
+  def test_can_determine_winner
+    skip
+  end
+
+  def test_pile_can_transfer_cards
+    skip
+  end
+
+  def test_can_award_spoils
+    skip
+  end
+
 end

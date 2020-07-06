@@ -15,10 +15,10 @@ class Deck
   def high_ranking_cards
     high_rank_cards = []
         @cards.each do |card|
-      if card.rank >= 11
-        high_rank_cards << card
+          if card.rank >= 11
+            high_rank_cards << card
+          end
         end
-      end
     return high_rank_cards # tried this between conditional end and .each end, w
     #which didn't work
   end
